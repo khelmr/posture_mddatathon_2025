@@ -7,7 +7,6 @@ requires-python = ">=3.13"
 dependencies = [
     "numpy>=2.3.4",
     "pandas>=2.3.3",
-    "ruff>=0.14.3",
     "seaborn>=0.13.2",
     "torch>=2.9.0",
 ]
@@ -17,4 +16,5 @@ dev = [
     "basedpyright>=1.32.1",
     "black>=25.9.0",
     "jupyterlab>=4.4.10",
+    "ruff>=0.14.3",
 ]
