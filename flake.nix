@@ -31,6 +31,7 @@
             [
               python3
               uv
+              stdenv.cc.cc.lib
             ]
             ++ lib.optionals useCuda [
               # cuda packages
@@ -64,6 +65,7 @@
               export CMAKE_PREFIX_PATH="${pkgs.fmt.dev}:$CMAKE_PREFIX_PATH"
               export PKG_CONFIG_PATH="${pkgs.fmt.dev}/lib/pkgconfig:$PKG_CONFIG_PATH"
             ''}
+            export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
             uv sync
             . .venv/bin/activate
           '';
