@@ -57,6 +57,8 @@
 
           shellHook = ''
               unset PYTHONPATH
+                          export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
+
               ${lib.optionalString useCuda ''
                 export LD_LIBRARY_PATH="${nvidiaPackage}/lib:$LD_LIBRARY_PATH"
                 export CUDA_PATH=${pkgs.cudatoolkit}
@@ -65,7 +67,6 @@
               export CMAKE_PREFIX_PATH="${pkgs.fmt.dev}:$CMAKE_PREFIX_PATH"
               export PKG_CONFIG_PATH="${pkgs.fmt.dev}/lib/pkgconfig:$PKG_CONFIG_PATH"
             ''}
-            export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
             uv sync
             . .venv/bin/activate
           '';
