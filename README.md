@@ -1,4 +1,4 @@
-# 2025mddatathon
+# Exploring Posture as a Marker of Clinical Vulnerability: Natural Language Processing of Discharge Notes in MIMIC-IV
 
 ## Setup
 
@@ -9,7 +9,7 @@
 2. Run the following command(s)
 
 ``` sh
-uv init
+uv sync
 ```
 
 `
